@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тонировка автомобиля — DELLI Detailing Lab</title>
+  <meta name="description" content="Интерактивный конфигуратор тонировки: подбери степень затемнения и тип плёнки для своего автомобиля в DELLI Detailing Lab.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SVG-иконки (используются через <use href="#id">) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2 1.8 11.7c-1-.3-1-1 .2-1.5l18.5-7.1c.9-.3 1.6.2 1.4 1.2Z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 15v-3l2-5h14l2 5v3a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z"/><path d="M3 12h18M6 16v2m12-2v2"/><circle cx="7" cy="13.5" r=".5"/><circle cx="17" cy="13.5" r=".5"/></g></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></g></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24"><path fill="currentColor" d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5L3 7Zm2 13h14v2H5v-2Z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></g></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15a1 1 0 0 0 1.5.9l12-7.5a1 1 0 0 0 0-1.7l-12-7.5A1 1 0 0 0 7 4.5Z"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.8-4M4 4v4h4"/><path d="M4 13a8 8 0 0 0 14.8 4M20 20v-4h-4"/></g></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4m8-4v4"/><path d="M8 14h2m4 0h2m-8 3h2"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="m4 12.5 5 5L20 6.5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  </svg>
+
+  <!-- ============ 1. HEADER ============ -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo" aria-label="DELLI Detailing Lab — на главную">
+        <span class="logo__main">DELLI</span>
+        <span class="logo__sub">Detailing Lab</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a href="#" class="nav__link">Главная</a></li>
+          <li><a href="#" class="nav__link">Услуги</a></li>
+          <li><a href="#configurator" class="nav__link is-active" aria-current="page">Тонировка</a></li>
+          <li><a href="#" class="nav__link">Портфолио</a></li>
+          <li><a href="#" class="nav__link">О студии</a></li>
+          <li><a href="#contacts" class="nav__link">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="https://t.me/" class="icon-btn" aria-label="Telegram" target="_blank" rel="noopener">
+          <svg class="icon"><use href="#i-telegram"/></svg>
+        </a>
+        <a href="https://instagram.com/" class="icon-btn" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg class="icon"><use href="#i-instagram"/></svg>
+        </a>
+        <a href="#booking" class="btn btn--outline header__cta">
+          Записаться <svg class="icon"><use href="#i-arrow"/></svg>
+        </a>
+        <button class="icon-btn burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+          <svg class="icon"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="configurator" class="container layout">
+
+    <!-- ============ ЛЕВАЯ КОЛОНКА ============ -->
+    <div class="layout__main">
+
+      <!-- 2. HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__intro">
+          <span class="tag">Интерактив</span>
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__title-line">Подбери свою</span>
+            <span class="hero__title-accent">Тонировку</span>
+          </h1>
+          <p class="hero__subtitle">Узнай, как будет выглядеть твой автомобиль<br class="br-desktop"> с разной степенью тонировки.</p>
+        </div>
+
+        <figure class="stage" id="stage">
+          <span class="stage__brand" aria-hidden="true">DELLI<small>Detailing Lab</small></span>
+          <div class="car" data-compare="false" id="heroCar">
+            <!-- ПЛЕЙСХОЛДЕР: фото автомобиля (PNG с прозрачным фоном) -->
+            <img class="car__img" id="carImg" src="assets/car-side.svg" alt="BMW M5 чёрного цвета — превью тонировки" width="800" height="280">
+            <!-- ПЛЕЙСХОЛДЕР: маска стёкол (PNG того же размера, закрашены только стёкла) -->
+            <img class="car__glass" id="carGlass" src="assets/car-side-glass.svg" alt="" aria-hidden="true" width="800" height="280">
+            <span class="car__divider" aria-hidden="true"></span>
+            <span class="car__label car__label--before" aria-hidden="true">До</span>
+            <span class="car__label car__label--after" aria-hidden="true">После</span>
+          </div>
+          <figcaption class="stage__caption" id="stageCaption" aria-live="polite">Без тонировки · Сбоку</figcaption>
+        </figure>
+      </section>
+
+      <!-- 3. ВЫБОР РАКУРСА -->
+      <section class="angle-bar glass" aria-label="Ракурс и сравнение">
+        <div class="angle-bar__group">
+          <span class="angle-bar__label">
+            <svg class="icon"><use href="#i-car"/></svg> Выбери ракурс:
+          </span>
+          <div class="segmented" role="radiogroup" aria-label="Ракурс" id="angles">
+            <button class="chip is-active" role="radio" aria-checked="true" data-angle="side">Сбоку</button>
+            <button class="chip" role="radio" aria-checked="false" data-angle="front">Спереди</button>
+            <button class="chip" role="radio" aria-checked="false" data-angle="rear">Сзади</button>
+            <button class="chip" role="radio" aria-checked="false" data-angle="interior">Салон</button>
+          </div>
+        </div>
+
+        <label class="toggle">
+          <svg class="icon"><use href="#i-eye"/></svg>
+          <span>До / После</span>
+          <input type="checkbox" class="toggle__input" id="compareToggle">
+          <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+        </label>
+      </section>
+
+      <!-- 4. ГАЛЕРЕЯ -->
+      <section class="gallery" aria-label="Варианты тонировки">
+        <button class="shot is-active" data-tint="0" aria-pressed="true">
+          <span class="shot__media" style="--t:0">
+            <img src="assets/car-side.svg" alt="Автомобиль без тонировки" loading="lazy">
+            <img class="shot__glass" src="assets/car-side-glass.svg" alt="" aria-hidden="true" loading="lazy">
+          </span>
+          <span class="shot__label">Без тонировки</span>
+        </button>
+        <button class="shot" data-tint="20" aria-pressed="false">
+          <span class="shot__media" style="--t:20">
+            <img src="assets/car-side.svg" alt="Автомобиль с тонировкой 20%" loading="lazy">
+            <img class="shot__glass" src="assets/car-side-glass.svg" alt="" aria-hidden="true" loading="lazy">
+          </span>
+          <span class="shot__label">20%</span>
+        </button>
+        <button class="shot" data-tint="50" aria-pressed="false">
+          <span class="shot__media" style="--t:50">
+            <img src="assets/car-side.svg" alt="Автомобиль с тонировкой 50%" loading="lazy">
+            <img class="shot__glass" src="assets/car-side-glass.svg" alt="" aria-hidden="true" loading="lazy">
+          </span>
+          <span class="shot__label">50%</span>
+        </button>
+        <button class="shot" data-tint="70" aria-pressed="false">
+          <span class="shot__media" style="--t:70">
+            <img src="assets/car-side.svg" alt="Автомобиль с тонировкой 70%" loading="lazy">
+            <img class="shot__glass" src="assets/car-side-glass.svg" alt="" aria-hidden="true" loading="lazy">
+          </span>
+          <span class="shot__label">70%</span>
+        </button>
+      </section>
+    </div>
+
+    <!-- ============ ПРАВАЯ КОЛОНКА ============ -->
+    <aside class="layout__side">
+
+      <!-- Панель управления -->
+      <section class="panel glass" aria-label="Настройки тонировки">
+        <div class="panel__head">
+          <h2 class="panel__title" id="tintLabel">Степень затемнения</h2>
+          <output class="badge" id="tintValue" for="tintRange">20%</output>
+        </div>
+
+        <div class="range">
+          <input type="range" class="range__input" id="tintRange" min="0" max="5" step="1" value="1"
+                 aria-labelledby="tintLabel" aria-valuetext="20%">
+          <div class="range__ticks" id="tintTicks"></div>
+        </div>
+
+        <h3 class="panel__subtitle">Популярные варианты</h3>
+        <div class="presets" id="presets">
+          <button class="preset is-active" data-value="20" aria-pressed="true">
+            <span class="preset__media" style="--t:20">
+              <img src="assets/car-side.svg" alt="" loading="lazy">
+              <img class="shot__glass" src="assets/car-side-glass.svg" alt="" loading="lazy">
+            </span>
+            <span class="preset__name">Светлая</span>
+            <span class="preset__value">20%</span>
+          </button>
+          <button class="preset" data-value="50" aria-pressed="false">
+            <span class="preset__media" style="--t:50">
+              <img src="assets/car-side.svg" alt="" loading="lazy">
+              <img class="shot__glass" src="assets/car-side-glass.svg" alt="" loading="lazy">
+            </span>
+            <span class="preset__name">Средняя</span>
+            <span class="preset__value">50%</span>
+          </button>
+          <button class="preset" data-value="70" aria-pressed="false">
+            <span class="preset__media" style="--t:70">
+              <img src="assets/car-side.svg" alt="" loading="lazy">
+              <img class="shot__glass" src="assets/car-side-glass.svg" alt="" loading="lazy">
+            </span>
+            <span class="preset__name">Тёмная</span>
+            <span class="preset__value">70%</span>
+          </button>
+        </div>
+
+        <h3 class="panel__subtitle">Тип плёнки</h3>
+        <div class="films" id="films" role="radiogroup" aria-label="Тип плёнки">
+          <button class="film is-active" role="radio" aria-checked="true" data-film="ceramic">
+            <svg class="film__icon film__icon--crown"><use href="#i-crown"/></svg>
+            <span><strong>Керамическая</strong><small>Премиум защита</small></span>
+          </button>
+          <button class="film" role="radio" aria-checked="false" data-film="carbon">
+            <svg class="film__icon"><use href="#i-layers"/></svg>
+            <span><strong>Карбоновая</strong><small>Классика</small></span>
+          </button>
+        </div>
+
+        <button class="btn btn--primary btn--block" id="applyBtn">
+          <svg class="icon"><use href="#i-play"/></svg> Применить плёнку
+        </button>
+        <button class="btn btn--dark btn--block" id="resetBtn">
+          <svg class="icon"><use href="#i-refresh"/></svg> Сбросить
+        </button>
+      </section>
+
+      <!-- 5. CTA -->
+      <section class="cta glass" id="booking" aria-labelledby="cta-title">
+        <h2 class="cta__title" id="cta-title">Нравится результат?</h2>
+        <p class="cta__subtitle">Запишись на тонировку прямо сейчас!</p>
+        <ul class="cta__list">
+          <li><svg class="icon"><use href="#i-check"/></svg>Официальные плёнки</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Гарантия на работу</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Профессиональная установка</li>
+        </ul>
+        <a href="https://t.me/" class="btn btn--primary btn--block btn--lg" id="bookBtn" target="_blank" rel="noopener">
+          <svg class="icon"><use href="#i-calendar"/></svg>
+          <span>Записаться на тонировку</span>
+          <svg class="icon"><use href="#i-arrow"/></svg>
+        </a>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="footer" id="contacts">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> DELLI Detailing Lab</span>
+      <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
