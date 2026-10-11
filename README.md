@@ -2,11 +2,40 @@
 
 Одностраничный лендинг с интерактивным подбором тонировки. Чистые HTML5, CSS3 и Vanilla JS: без сборки, фреймворков и Tailwind.
 
-## Запуск
-Откройте `index.html` в браузере или запустите локальный сервер:
+## Как запустить проект
+
+Сборка и установка зависимостей не нужны: это обычные файлы HTML, CSS и JS.
+
+### 1. Скачать проект
+Через Git:
 ```bash
-npx serve .        # или: python3 -m http.server
+git clone https://github.com/lunyxfon/delli-tinting-configurator.git
+cd delli-tinting-configurator
+git checkout claude/delli-detailing-landing-dz1du2
 ```
+Или без Git: на странице репозитория на GitHub выберите ветку `claude/delli-detailing-landing-dz1du2`, нажмите **Code → Download ZIP** и распакуйте архив.
+
+### 2. Открыть в браузере
+
+**Вариант А: проще всего.** Дважды щёлкните по `index.html`, и страница откроется в браузере. Всё работает, кроме шрифта Montserrat, если нет интернета: тогда будет системный шрифт.
+
+**Вариант Б: через локальный сервер (рекомендуется).** Ведёт себя так же, как настоящий сайт. Запустите из папки проекта одну из команд:
+
+| Что установлено | Команда | Адрес |
+|---|---|---|
+| Python 3 | `python3 -m http.server 8000` (Windows: `python -m http.server 8000`) | http://localhost:8000 |
+| Node.js | `npx serve .` | http://localhost:3000 |
+| VS Code | Установите расширение **Live Server**, затем ПКМ по `index.html` → **Open with Live Server** | откроется само |
+
+Остановить сервер: `Ctrl + C` в терминале.
+
+### 3. Посмотреть мобильную версию
+В Chrome нажмите `F12`, затем `Ctrl + Shift + M` (на Mac `Cmd + Shift + M`) и выберите устройство, например iPhone.
+
+### 4. Выложить в интернет (по желанию)
+- **GitHub Pages.** В репозитории откройте **Settings → Pages**, в поле *Source* выберите ветку и папку `/ (root)`, нажмите **Save**. Через 1–2 минуты сайт будет доступен по адресу `https://lunyxfon.github.io/delli-tinting-configurator/`.
+- **Netlify / Vercel.** Перетащите папку проекта на https://app.netlify.com/drop, и сайт сразу получит ссылку.
+- **Свой хостинг.** Загрузите `index.html`, `style.css`, `script.js` и папку `assets/` в корень сайта.
 
 ## Структура
 ```
