@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
@@ -26,24 +27,33 @@
     <symbol id="i-calendar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4m8-4v4"/><path d="M8 14h2m4 0h2m-8 3h2"/></g></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="m4 12.5 5 5L20 6.5"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-tint" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 18 7 7h10l3 11H4Z"/><path d="M7 7 12 18M11 7l5 11" opacity=".5"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></g></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11Z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"/></g></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/><path d="M19 16v4m-2-2h4"/></g></symbol>
+    <symbol id="i-seat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h5a2 2 0 0 1 2 2v8H9L7 5a2 2 0 0 1 1-2Z"/><path d="M6 13h11a2 2 0 0 1 2 2v2H7a2 2 0 0 1-2-2v-1a1 1 0 0 1 1-1Zm2 4v4m9-4v4"/></g></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a9 9 0 0 0 0 18c1.1 0 1.6-.8 1.2-1.7-.5-1 .2-2.3 1.4-2.3H17a4 4 0 0 0 4-4c0-5.5-4-10-9-10Z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="11" cy="7" r="1.2"/><circle cx="16" cy="8.5" r="1.2"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 3h3.5l1.5 5-2.2 1.3a11 11 0 0 0 6.9 6.9L16 14l5 1.5V19a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
   </svg>
 
   <!-- ============ 1. HEADER ============ -->
   <header class="header">
     <div class="container header__inner">
-      <a href="#" class="logo" aria-label="DELLI Detailing Lab — на главную">
+      <a href="#top" class="logo" aria-label="DELLI Detailing Lab — на главную">
         <span class="logo__main">DELLI</span>
         <span class="logo__sub">Detailing Lab</span>
       </a>
 
       <nav class="nav" id="nav" aria-label="Основная навигация">
         <ul class="nav__list">
-          <li><a href="#" class="nav__link">Главная</a></li>
-          <li><a href="#" class="nav__link">Услуги</a></li>
-          <li><a href="#configurator" class="nav__link is-active" aria-current="page">Тонировка</a></li>
-          <li><a href="#" class="nav__link">Портфолио</a></li>
-          <li><a href="#" class="nav__link">О студии</a></li>
-          <li><a href="#contacts" class="nav__link">Контакты</a></li>
+          <li><a href="#top" class="nav__link" data-spy="top">Главная</a></li>
+          <li><a href="#services" class="nav__link" data-spy="services">Услуги</a></li>
+          <li><a href="#tinting" class="nav__link is-active" data-spy="tinting" aria-current="true">Тонировка</a></li>
+          <li><a href="#portfolio" class="nav__link" data-spy="portfolio">Портфолио</a></li>
+          <li><a href="#about" class="nav__link" data-spy="about">О студии</a></li>
+          <li><a href="#contacts" class="nav__link" data-spy="contacts">Контакты</a></li>
         </ul>
       </nav>
 
@@ -54,7 +64,7 @@
         <a href="https://instagram.com/" class="icon-btn" aria-label="Instagram" target="_blank" rel="noopener">
           <svg class="icon"><use href="#i-instagram"/></svg>
         </a>
-        <a href="#booking" class="btn btn--outline header__cta">
+        <a href="#contacts" class="btn btn--outline header__cta">
           Записаться <svg class="icon"><use href="#i-arrow"/></svg>
         </a>
         <button class="icon-btn burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
@@ -64,7 +74,8 @@
     </div>
   </header>
 
-  <main id="configurator" class="container layout">
+  <main id="top">
+  <section id="tinting" class="container layout" aria-label="Конфигуратор тонировки">
 
     <!-- ============ ЛЕВАЯ КОЛОНКА ============ -->
     <div class="layout__main">
@@ -214,7 +225,7 @@
       </section>
 
       <!-- 5. CTA -->
-      <section class="cta glass" id="booking" aria-labelledby="cta-title">
+      <section class="cta glass" aria-labelledby="cta-title">
         <h2 class="cta__title" id="cta-title">Нравится результат?</h2>
         <p class="cta__subtitle">Запишись на тонировку прямо сейчас!</p>
         <ul class="cta__list">
@@ -222,19 +233,378 @@
           <li><svg class="icon"><use href="#i-check"/></svg>Гарантия на работу</li>
           <li><svg class="icon"><use href="#i-check"/></svg>Профессиональная установка</li>
         </ul>
-        <a href="https://t.me/" class="btn btn--primary btn--block btn--lg" id="bookBtn" target="_blank" rel="noopener">
+        <a href="#contacts" class="btn btn--primary btn--block btn--lg" id="bookBtn">
           <svg class="icon"><use href="#i-calendar"/></svg>
           <span>Записаться на тонировку</span>
           <svg class="icon"><use href="#i-arrow"/></svg>
         </a>
       </section>
     </aside>
+  </section>
+
+  <!-- ============ 6. УСЛУГИ ============ -->
+  <section class="section" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <header class="section-head reveal">
+        <span class="tag">Что мы делаем</span>
+        <h2 class="section-title" id="services-title">Наши <span>услуги</span></h2>
+        <p class="section-lead">Полный цикл ухода за автомобилем в одной студии: от тонировки до защиты кузова и салона.</p>
+      </header>
+
+      <!-- Цены и сроки — примерные, замените на свои -->
+      <div class="services">
+        <article class="service service--featured reveal">
+          <span class="service__badge">Хит</span>
+          <svg class="service__icon"><use href="#i-tint"/></svg>
+          <h3 class="service__title">Тонировка стёкол</h3>
+          <p class="service__text">Керамические и карбоновые плёнки. Защита от УФ и жары, приватность салона.</p>
+          <dl class="service__meta">
+            <div><dt>Цена</dt><dd>от 6 900 ₽</dd></div>
+            <div><dt>Срок</dt><dd>3–5 часов</dd></div>
+          </dl>
+          <div class="service__actions">
+            <a href="#tinting" class="btn btn--dark">Подобрать</a>
+            <a href="#contacts" class="btn btn--primary" data-service="Тонировка стёкол">Записаться</a>
+          </div>
+        </article>
+
+        <article class="service reveal">
+          <svg class="service__icon"><use href="#i-shield"/></svg>
+          <h3 class="service__title">Антигравийная плёнка</h3>
+          <p class="service__text">Полиуретановая плёнка (PPF) защищает кузов от сколов, песка и царапин.</p>
+          <dl class="service__meta">
+            <div><dt>Цена</dt><dd>от 29 900 ₽</dd></div>
+            <div><dt>Срок</dt><dd>2–4 дня</dd></div>
+          </dl>
+          <div class="service__actions">
+            <a href="#contacts" class="btn btn--outline" data-service="Антигравийная плёнка">Записаться</a>
+          </div>
+        </article>
+
+        <article class="service reveal">
+          <svg class="service__icon"><use href="#i-drop"/></svg>
+          <h3 class="service__title">Керамическое покрытие</h3>
+          <p class="service__text">Глубокий блеск и гидрофобный эффект. Грязь и вода не держатся на кузове.</p>
+          <dl class="service__meta">
+            <div><dt>Цена</dt><dd>от 14 900 ₽</dd></div>
+            <div><dt>Срок</dt><dd>1–2 дня</dd></div>
+          </dl>
+          <div class="service__actions">
+            <a href="#contacts" class="btn btn--outline" data-service="Керамическое покрытие">Записаться</a>
+          </div>
+        </article>
+
+        <article class="service reveal">
+          <svg class="service__icon"><use href="#i-sparkle"/></svg>
+          <h3 class="service__title">Полировка кузова</h3>
+          <p class="service__text">Убираем голограммы, мелкие царапины и «паутинку». Возвращаем заводской вид ЛКП.</p>
+          <dl class="service__meta">
+            <div><dt>Цена</dt><dd>от 9 900 ₽</dd></div>
+            <div><dt>Срок</dt><dd>1 день</dd></div>
+          </dl>
+          <div class="service__actions">
+            <a href="#contacts" class="btn btn--outline" data-service="Полировка кузова">Записаться</a>
+          </div>
+        </article>
+
+        <article class="service reveal">
+          <svg class="service__icon"><use href="#i-seat"/></svg>
+          <h3 class="service__title">Химчистка салона</h3>
+          <p class="service__text">Деликатная чистка кожи, алькантары и текстиля, озонирование, защита кожи.</p>
+          <dl class="service__meta">
+            <div><dt>Цена</dt><dd>от 7 900 ₽</dd></div>
+            <div><dt>Срок</dt><dd>1 день</dd></div>
+          </dl>
+          <div class="service__actions">
+            <a href="#contacts" class="btn btn--outline" data-service="Химчистка салона">Записаться</a>
+          </div>
+        </article>
+
+        <article class="service reveal">
+          <svg class="service__icon"><use href="#i-palette"/></svg>
+          <h3 class="service__title">Оклейка винилом</h3>
+          <p class="service__text">Смена цвета кузова, антихром, матовые и сатиновые плёнки без перекраса.</p>
+          <dl class="service__meta">
+            <div><dt>Цена</dt><dd>от 49 900 ₽</dd></div>
+            <div><dt>Срок</dt><dd>3–5 дней</dd></div>
+          </dl>
+          <div class="service__actions">
+            <a href="#contacts" class="btn btn--outline" data-service="Оклейка винилом">Записаться</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. ПОРТФОЛИО ============ -->
+  <section class="section" id="portfolio" aria-labelledby="portfolio-title">
+    <div class="container">
+      <header class="section-head section-head--row reveal">
+        <div>
+          <span class="tag">Наши работы</span>
+          <h2 class="section-title" id="portfolio-title"><span>Портфолио</span></h2>
+        </div>
+        <div class="segmented" role="group" aria-label="Фильтр работ" id="portfolioFilter">
+          <button class="chip is-active" data-filter="all" aria-pressed="true">Все</button>
+          <button class="chip" data-filter="tint" aria-pressed="false">Тонировка</button>
+          <button class="chip" data-filter="ppf" aria-pressed="false">Плёнка PPF</button>
+          <button class="chip" data-filter="ceramic" aria-pressed="false">Керамика</button>
+          <button class="chip" data-filter="polish" aria-pressed="false">Полировка</button>
+        </div>
+      </header>
+
+      <!-- ПЛЕЙСХОЛДЕРЫ: замените src и подписи на фото своих работ -->
+      <div class="works" id="works">
+        <figure class="work work--wide reveal" data-category="tint">
+          <div class="work__media" style="--t:70">
+            <img src="assets/car-ferrari.jpg" alt="Ferrari F8 Tributo после тонировки 70%" loading="lazy">
+            <img class="shot__glass" src="assets/car-ferrari-glass.png" alt="" aria-hidden="true" loading="lazy">
+          </div>
+          <figcaption class="work__caption">
+            <span class="work__tag">Тонировка</span>
+            <strong>Ferrari F8 Tributo</strong>
+            <span>Керамическая плёнка, 70%</span>
+          </figcaption>
+        </figure>
+
+        <figure class="work reveal" data-category="polish">
+          <div class="work__media" style="--pos: 25% 70%; --zoom: 2.2">
+            <img src="assets/car-ferrari.jpg" alt="Отражения на капоте после полировки" loading="lazy">
+          </div>
+          <figcaption class="work__caption">
+            <span class="work__tag">Полировка</span>
+            <strong>Ferrari F8 Tributo</strong>
+            <span>Восстановительная полировка капота</span>
+          </figcaption>
+        </figure>
+
+        <figure class="work reveal" data-category="ceramic">
+          <div class="work__media" style="--pos: 62% 78%; --zoom: 2.6">
+            <img src="assets/car-ferrari.jpg" alt="Колёсный диск с керамическим покрытием" loading="lazy">
+          </div>
+          <figcaption class="work__caption">
+            <span class="work__tag">Керамика</span>
+            <strong>Ferrari F8 Tributo</strong>
+            <span>Керамика дисков и суппортов</span>
+          </figcaption>
+        </figure>
+
+        <figure class="work reveal" data-category="ppf">
+          <div class="work__media" style="--pos: 22% 85%; --zoom: 2">
+            <img src="assets/car-ferrari.jpg" alt="Передний бампер под антигравийной плёнкой" loading="lazy">
+          </div>
+          <figcaption class="work__caption">
+            <span class="work__tag">Плёнка PPF</span>
+            <strong>Ferrari F8 Tributo</strong>
+            <span>Полная оклейка передней части</span>
+          </figcaption>
+        </figure>
+
+        <figure class="work reveal" data-category="tint">
+          <div class="work__media" style="--t:50; --pos: 60% 30%; --zoom: 2.4">
+            <img src="assets/car-ferrari.jpg" alt="Лобовое и боковое стекло с тонировкой 50%" loading="lazy">
+            <img class="shot__glass" src="assets/car-ferrari-glass.png" alt="" aria-hidden="true" loading="lazy">
+          </div>
+          <figcaption class="work__caption">
+            <span class="work__tag">Тонировка</span>
+            <strong>Ferrari F8 Tributo</strong>
+            <span>Карбоновая плёнка, 50%</span>
+          </figcaption>
+        </figure>
+
+        <figure class="work reveal" data-category="ceramic polish">
+          <div class="work__media" style="--pos: 50% 80%">
+            <img src="assets/studio.jpg" alt="Автомобиль в студии DELLI под шестигранным светом" loading="lazy">
+          </div>
+          <figcaption class="work__caption">
+            <span class="work__tag">Комплекс</span>
+            <strong>Ferrari F8 Tributo</strong>
+            <span>Полировка + керамика кузова</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. О СТУДИИ ============ -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="container about">
+      <div class="about__media reveal">
+        <img src="assets/studio.jpg" alt="Бокс студии DELLI Detailing Lab с шестигранным освещением" loading="lazy" width="800" height="1000">
+        <div class="about__badge glass">
+          <strong>DELLI</strong>
+          <span>Detailing Lab</span>
+        </div>
+      </div>
+
+      <div class="about__body">
+        <header class="section-head reveal">
+          <span class="tag">О студии</span>
+          <h2 class="section-title" id="about-title">Лаборатория <span>детейлинга</span></h2>
+          <p class="section-lead">DELLI Detailing Lab — студия, где к каждому автомобилю относятся как к своему. Работаем в чистом тёплом боксе с профессиональным светом, используем только официальные материалы и даём гарантию на каждую работу.</p>
+        </header>
+
+        <!-- Цифры — примерные, замените на свои -->
+        <ul class="stats reveal">
+          <li class="stat"><strong class="stat__value" data-count="7" data-suffix="+">0</strong><span>лет опыта</span></li>
+          <li class="stat"><strong class="stat__value" data-count="2500" data-suffix="+">0</strong><span>автомобилей</span></li>
+          <li class="stat"><strong class="stat__value" data-count="5" data-suffix=" лет">0</strong><span>гарантия</span></li>
+          <li class="stat"><strong class="stat__value" data-count="4.9" data-decimals="1">0</strong><span>рейтинг</span></li>
+        </ul>
+
+        <h3 class="about__subtitle reveal">Как мы работаем</h3>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num">01</span>
+            <div><strong>Заявка</strong><p>Оставляете заявку на сайте или пишете в Telegram.</p></div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">02</span>
+            <div><strong>Осмотр и подбор</strong><p>Осматриваем авто, подбираем материалы, фиксируем цену.</p></div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">03</span>
+            <div><strong>Работа</strong><p>Выполняем работу в боксе, присылаем фото процесса.</p></div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">04</span>
+            <div><strong>Выдача</strong><p>Принимаете авто при свете, получаете гарантию и рекомендации.</p></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9. КОНТАКТЫ ============ -->
+  <section class="section" id="contacts" aria-labelledby="contacts-title">
+    <div class="container">
+      <header class="section-head reveal">
+        <span class="tag">Запись</span>
+        <h2 class="section-title" id="contacts-title"><span>Контакты</span></h2>
+        <p class="section-lead">Оставьте заявку, и мы перезвоним в течение 15 минут в рабочее время.</p>
+      </header>
+
+      <div class="contacts">
+        <div class="contacts__info">
+          <!-- ПЛЕЙСХОЛДЕРЫ: адрес, телефон и часы работы -->
+          <ul class="contact-list reveal">
+            <li class="contact-item glass">
+              <svg class="contact-item__icon"><use href="#i-pin"/></svg>
+              <div><span>Адрес</span><strong>г. Москва, ул. Примерная, 1</strong></div>
+            </li>
+            <li class="contact-item glass">
+              <svg class="contact-item__icon"><use href="#i-phone"/></svg>
+              <div><span>Телефон</span><a href="tel:+70000000000"><strong>+7 (000) 000-00-00</strong></a></div>
+            </li>
+            <li class="contact-item glass">
+              <svg class="contact-item__icon"><use href="#i-clock"/></svg>
+              <div><span>Режим работы</span><strong>Ежедневно 10:00–21:00</strong></div>
+            </li>
+            <li class="contact-item glass">
+              <svg class="contact-item__icon"><use href="#i-telegram"/></svg>
+              <div><span>Мессенджеры</span>
+                <strong class="contact-item__links">
+                  <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> ·
+                  <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+                </strong>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Карта: замените блок на iframe Яндекс.Карт / Google Maps -->
+          <div class="map reveal" role="img" aria-label="Схема проезда (плейсхолдер карты)">
+            <span class="map__pin"><svg class="icon"><use href="#i-pin"/></svg></span>
+            <span class="map__label">DELLI Detailing Lab</span>
+          </div>
+        </div>
+
+        <form class="form glass reveal" id="booking" novalidate>
+          <h3 class="form__title">Записаться</h3>
+
+          <div class="field">
+            <label for="fName">Имя</label>
+            <input id="fName" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required>
+            <span class="field__error">Введите имя</span>
+          </div>
+
+          <div class="field">
+            <label for="fPhone">Телефон</label>
+            <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" required>
+            <span class="field__error">Введите номер полностью</span>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="fCar">Автомобиль</label>
+              <input id="fCar" name="car" type="text" placeholder="Марка и модель">
+            </div>
+            <div class="field">
+              <label for="fService">Услуга</label>
+              <select id="fService" name="service">
+                <option>Тонировка стёкол</option>
+                <option>Антигравийная плёнка</option>
+                <option>Керамическое покрытие</option>
+                <option>Полировка кузова</option>
+                <option>Химчистка салона</option>
+                <option>Оклейка винилом</option>
+                <option>Другое</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="fComment">Комментарий</label>
+            <textarea id="fComment" name="comment" rows="3" placeholder="Удобное время, пожелания"></textarea>
+          </div>
+
+          <label class="check">
+            <input type="checkbox" id="fAgree" name="agree" required>
+            <span class="check__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+            <span>Согласен на обработку персональных данных</span>
+          </label>
+
+          <button type="submit" class="btn btn--primary btn--block btn--lg">
+            <svg class="icon"><use href="#i-calendar"/></svg> Отправить заявку
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
   </main>
 
-  <footer class="footer" id="contacts">
-    <div class="container footer__inner">
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#top" class="logo" aria-label="DELLI Detailing Lab — наверх">
+          <span class="logo__main">DELLI</span>
+          <span class="logo__sub">Detailing Lab</span>
+        </a>
+        <p>Тонировка, защитные плёнки и детейлинг премиум-класса.</p>
+      </div>
+      <nav class="footer__col" aria-label="Разделы сайта">
+        <h4>Разделы</h4>
+        <a href="#services">Услуги</a>
+        <a href="#tinting">Тонировка</a>
+        <a href="#portfolio">Портфолио</a>
+        <a href="#about">О студии</a>
+      </nav>
+      <div class="footer__col">
+        <h4>Контакты</h4>
+        <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+        <span>г. Москва, ул. Примерная, 1</span>
+        <span>Ежедневно 10:00–21:00</span>
+      </div>
+      <div class="footer__col">
+        <h4>Мы в соцсетях</h4>
+        <div class="footer__social">
+          <a href="https://t.me/" class="icon-btn" aria-label="Telegram" target="_blank" rel="noopener"><svg class="icon"><use href="#i-telegram"/></svg></a>
+          <a href="https://instagram.com/" class="icon-btn" aria-label="Instagram" target="_blank" rel="noopener"><svg class="icon"><use href="#i-instagram"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
       <span>© <span id="year"></span> DELLI Detailing Lab</span>
-      <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+      <a href="#top">Наверх ↑</a>
     </div>
   </footer>
 
