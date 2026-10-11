@@ -12,10 +12,10 @@
   // Изображения для каждого ракурса. Замените пути на свои фото:
   // car — фото автомобиля, glass — маска стёкол того же размера.
   const ANGLES = {
-    side:     { label: "Сбоку",   car: "assets/car-side.svg", glass: "assets/car-side-glass.svg" },
-    front:    { label: "Спереди", car: "assets/car-side.svg", glass: "assets/car-side-glass.svg" },
-    rear:     { label: "Сзади",   car: "assets/car-side.svg", glass: "assets/car-side-glass.svg" },
-    interior: { label: "Салон",   car: "assets/car-side.svg", glass: "assets/car-side-glass.svg" },
+    side:     { label: "Сбоку",   car: "assets/car-ferrari.jpg", glass: "assets/car-ferrari-glass.png" },
+    front:    { label: "Спереди", car: "assets/car-ferrari.jpg", glass: "assets/car-ferrari-glass.png" },
+    rear:     { label: "Сзади",   car: "assets/car-ferrari.jpg", glass: "assets/car-ferrari-glass.png" },
+    interior: { label: "Салон",   car: "assets/car-ferrari.jpg", glass: "assets/car-ferrari-glass.png" },
   };
 
   // Оттенок плёнки (CSS-фильтр для слоя стёкол)

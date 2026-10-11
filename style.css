@@ -292,71 +292,46 @@ ul { padding: 0; list-style: none; }
   color: rgba(255, 255, 255, 0.88);
 }
 
-/* Сцена с автомобилем (студия с неоном) */
+/* Сцена с автомобилем (фото) */
 .stage {
   position: relative;
-  margin: -40px 0 0;
-  aspect-ratio: 16 / 7.4;
+  margin: -64px 0 0;
+  aspect-ratio: 1116 / 580; /* пропорции фото в assets/car-ferrari.jpg */
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background:
-    /* пол */
-    radial-gradient(60% 30% at 50% 92%, rgba(255, 26, 26, 0.22), transparent 70%),
-    linear-gradient(180deg, transparent 62%, rgba(255, 255, 255, 0.04) 62.2%, rgba(0, 0, 0, 0.4) 100%),
-    /* стены */
-    radial-gradient(70% 70% at 70% 30%, #2a2a2c 0%, #151516 55%, #0c0c0c 100%);
+  background: var(--c-bg);
   isolation: isolate;
 }
 
-/* Неоновые линии */
-.stage::before,
+/* Затемнение сверху (под заголовок) и красное свечение снизу */
 .stage::after {
   content: "";
   position: absolute;
-  z-index: -1;
-  background: var(--c-red);
-  box-shadow: 0 0 12px 2px var(--c-red), 0 0 60px 8px rgba(255, 26, 26, 0.45);
-}
-.stage::before { left: 0; width: 34%; top: 58%; height: 3px; }
-.stage::after { right: 21%; width: 3px; top: 18%; height: 38%; }
-
-.stage__brand {
-  position: absolute;
-  z-index: -1;
-  top: 18%;
-  right: 4%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  font-weight: 900;
-  font-style: italic;
-  font-size: clamp(28px, 4.2vw, 62px);
-  line-height: 0.9;
-  transform: rotate(-6deg) skewX(-8deg);
-  color: rgba(255, 255, 255, 0.92);
-  text-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
-}
-.stage__brand small {
-  font-size: 0.32em;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--c-red);
-  text-shadow: 0 0 12px rgba(255, 26, 26, 0.7);
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    /* фото растворяется в фоне страницы сверху и по бокам */
+    linear-gradient(180deg, var(--c-bg) 0%, rgba(10, 10, 10, 0.75) 12%, rgba(10, 10, 10, 0) 34%),
+    linear-gradient(90deg, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0) 18%, rgba(10, 10, 10, 0) 82%, rgba(10, 10, 10, 0.7) 100%),
+    radial-gradient(60% 22% at 50% 100%, rgba(255, 26, 26, 0.28), transparent 70%);
 }
 
 .car {
   --tint: 0;
   --film-filter: none;
   position: absolute;
-  left: 4%;
-  right: 4%;
-  bottom: 4%;
+  inset: 0;
   transition: opacity var(--t-slow), transform var(--t-slow);
 }
-.car.is-switching { opacity: 0; transform: translateX(-24px); }
+.car.is-switching { opacity: 0; transform: scale(1.02); }
 
 .car__img,
-.car__glass { width: 100%; height: auto; }
+.car__glass {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .car__glass {
   position: absolute;
@@ -377,15 +352,16 @@ ul { padding: 0; list-style: none; }
   pointer-events: none;
 }
 .car__divider {
-  top: -6%;
-  bottom: -2%;
+  top: 0;
+  bottom: 0;
   left: 50%;
   width: 2px;
   background: var(--c-red);
   box-shadow: 0 0 12px var(--c-red);
 }
 .car__label {
-  top: -4%;
+  top: 22%;
+  z-index: 2;
   padding: 4px 10px;
   border-radius: 6px;
   font-size: 12px;
@@ -402,6 +378,7 @@ ul { padding: 0; list-style: none; }
 
 .stage__caption {
   position: absolute;
+  z-index: 2;
   left: 16px;
   bottom: 14px;
   padding: 5px 12px;
@@ -528,19 +505,25 @@ ul { padding: 0; list-style: none; }
   --t: 0;
   position: relative;
   display: block;
-  background:
-    radial-gradient(50% 40% at 30% 0%, rgba(255, 255, 255, 0.22), transparent 70%),
-    radial-gradient(50% 40% at 70% 0%, rgba(255, 255, 255, 0.18), transparent 70%),
-    linear-gradient(180deg, #2b2b2d 0%, #161617 65%, #3a3a3c 66%, #1e1e1f 100%);
+  overflow: hidden;
+  background: #1b1c1f;
 }
 .shot__media {
   display: grid;
-  align-items: end;
-  aspect-ratio: 16 / 8;
-  padding: 0 4% 3%;
+  aspect-ratio: 16 / 9;
 }
 /* Фото и маска стёкол лежат в одной ячейке грида — всегда совпадают */
-.shot__media img { grid-area: 1 / 1; width: 100%; }
+.shot__media img {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* приближаем к стёклам, чтобы разница в тонировке была видна */
+  transform: scale(1.6);
+  transform-origin: 52% 32%;
+  transition: transform var(--t-slow);
+}
+.shot:hover .shot__media img { transform: scale(1.7); }
 
 .shot__glass {
   opacity: min(1, calc(var(--t) / 100 * 1.08));
@@ -675,13 +658,14 @@ ul { padding: 0; list-style: none; }
 .preset.is-active { border-color: var(--c-red); box-shadow: var(--glow-red); }
 
 /* Превью — увеличенный фрагмент окна автомобиля */
-.preset__media { height: 72px; overflow: hidden; }
+/* Превью — увеличенный фрагмент лобового стекла */
+.preset__media { height: 72px; }
 .preset__media img {
   position: absolute;
-  width: 330%;
+  width: 240%;
   max-width: none;
-  left: -95%;
-  top: -40%;
+  left: -64%;
+  top: -12%;
 }
 .preset__name { padding: 10px 14px 0; font-size: 13px; font-weight: 700; }
 .preset__value { padding: 2px 14px 12px; font-size: 13px; font-weight: 700; color: rgba(255, 255, 255, 0.85); }
@@ -833,10 +817,9 @@ ul { padding: 0; list-style: none; }
   .layout__side { grid-template-columns: 1fr; }
   .br-desktop { display: none; }
 
-  .stage { margin-top: 18px; aspect-ratio: 4 / 3; }
-  .stage::before { top: 52%; }
-  .stage__brand { top: 8%; }
-  .car { bottom: 10%; left: 2%; right: 2%; }
+  .stage { margin-top: 16px; }
+  .stage::after { background: radial-gradient(60% 22% at 50% 100%, rgba(255, 26, 26, 0.28), transparent 70%); }
+  .car__label { top: 12px; }
 
   .angle-bar { flex-direction: column; align-items: stretch; padding: 14px; }
   .angle-bar__group { flex-direction: column; align-items: stretch; gap: 12px; }
